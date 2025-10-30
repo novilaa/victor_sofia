@@ -1135,6 +1135,20 @@
       </div>
 
       <div class="form-group">
+        <label class="form-label" for="foodPreferences">Предпочтения в еде</label>
+        <textarea id="foodPreferences" name="foodPreferences" rows="2" class="form-input" placeholder="Укажите, если у вас есть особые предпочтения в еде (вегетарианское, без глютена и т.д.)"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Предпочитаемые напитки</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="drinks" value="vodka"> Водка</label>
+          <label><input type="checkbox" name="drinks" value="champagne"> Шампанское</label>
+          <label><input type="checkbox" name="drinks" value="nonalcoholic"> Безалкогольные напитки</label>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label class="form-label" for="message">Пожелание или комментарий</label>
         <textarea id="message" name="message" rows="4" class="form-input" placeholder="Ваше сообщение (необязательно)"></textarea>
       </div>
@@ -1213,6 +1227,8 @@
       const name = form.name.value.trim();
       const attendance = form.attendance.value;
       const guests = form.guests.value || "1";
+      const foodPreferences = form.foodPreferences.value.trim() || "—";
+      const drinks = Array.from(form.querySelectorAll('input[name="drinks"]:checked')).map(cb => cb.value).join(", ") || "Не указано";
       const message = form.message.value.trim() || "—";
 
       const text = `
@@ -1220,6 +1236,8 @@
 👤 Имя: ${name}
 📅 Присутствие: ${attendance}
 👥 Количество гостей: ${guests}
+🍽 Предпочтения в еде: ${foodPreferences}
+🥂 Напитки: ${drinks}
 💬 Сообщение: ${message}
       `;
 
