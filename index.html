@@ -201,15 +201,16 @@
     .scroll-down {
       position: absolute;
       bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       cursor: pointer;
       z-index: 3;
       width: 40px;
       height: 40px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: center; /* центруем содержимое внутри круга */
       background: rgba(255, 255, 255, 0.1);
       border-radius: 50%;
       backdrop-filter: blur(5px);
@@ -220,6 +221,9 @@
     .scroll-down i {
       color: var(--light);
       font-size: 20px;
+      display: block;
+      line-height: 1;
+      margin: 0;
     }
 
     @media (max-width: 768px) {
