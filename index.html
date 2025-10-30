@@ -837,6 +837,10 @@
 
     /* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
     @media (max-width: 768px) {
+      .hero {
+        background-attachment: scroll; /* Отключаем fixed для мобильных */
+        background-position: center center;
+      }
       .couple-name { font-size: 3.5em; }
       .invite-phrase { font-size: 1.4em; }
       .date { font-size: 1.8em; letter-spacing: 4px; padding: 12px 25px; }
