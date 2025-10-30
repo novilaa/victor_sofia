@@ -119,16 +119,18 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: var(--dark);
-      /* Фон с зимней тематикой */
-      background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(232, 244, 248, 0.6)), url("https://i.pinimg.com/736x/1f/4c/7c/1f4c7c0c3b4d3e9b9b8b3b3b3b3b3b3b.jpg");
+      color: var(--light);
+      /* Красивая атмосферная фотография */
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
+                  url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
       background-size: cover;
       background-position: center;
+      background-attachment: fixed;
       position: relative;
       overflow: hidden;
     }
 
-    /* Снежинки на фоне */
+    /* Декоративные элементы на фоне */
     .hero::before {
       content: "";
       position: absolute;
@@ -136,76 +138,85 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 25 L70 25 L60 35 L65 50 L50 40 L35 50 L40 35 L30 25 L45 25 Z' fill='%233498db' fill-opacity='0.05'/%3E%3C/svg%3E");
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L55 25 L70 25 L60 35 L65 50 L50 40 L35 50 L40 35 L30 25 L45 25 Z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
       opacity: 0.3;
     }
 
-    /* Контейнер для фотографий молодоженов */
-    .couple-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 40px;
-      margin-bottom: 40px;
+    /* Контейнер для основного контента */
+    .hero-content {
       z-index: 2;
-    }
-
-    /* Стили для фотографий молодоженов */
-    .couple-photo {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 8px solid rgba(255, 255, 255, 0.7);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-      transition: transform 0.5s ease;
-    }
-
-    .couple-photo:hover {
-      transform: scale(1.05);
+      text-align: center;
+      max-width: 800px;
+      padding: 0 20px;
     }
 
     /* Имена молодоженов */
     .couple-name {
       font-family: "Playfair Display", serif;
-      font-size: 4.5em;
+      font-size: 5.5em;
       font-weight: 300;
-      z-index: 2;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       opacity: 0;
       animation: fadeInUp 1.2s ease 0.2s forwards;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      letter-spacing: 2px;
     }
 
-    /* Дата свадьбы с декоративными линиями по бокам */
-    .date {
-      z-index: 2;
-      font-size: 2em;
-      letter-spacing: 4px;
-      color: var(--navy);
-      margin-top: 20px;
-      font-weight: 500;
+    /* Пригласительная фраза */
+    .invite-phrase {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8em;
+      font-weight: 300;
+      margin-bottom: 40px;
       opacity: 0;
       animation: fadeInUp 1.2s ease 0.4s forwards;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* Дата свадьбы с декоративными элементами */
+    .date {
+      font-size: 2.2em;
+      letter-spacing: 6px;
+      color: var(--light);
+      margin-top: 40px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease 0.6s forwards;
       position: relative;
       display: inline-block;
+      padding: 15px 40px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      backdrop-filter: blur(5px);
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
     }
 
-    .date::before, .date::after {
+    /* Декоративная линия под датой */
+    .date::after {
       content: "";
       position: absolute;
-      top: 50%;
-      width: 50px;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
       height: 1px;
-      background: var(--navy);
+      background: rgba(255, 255, 255, 0.5);
     }
 
-    .date::before {
-      left: -70px;
-    }
-
-    .date::after {
-      right: -70px;
+    /* Кнопка прокрутки вниз */
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2em;
+      opacity: 0.7;
+      animation: float 3s ease-in-out infinite;
+      cursor: pointer;
+      z-index: 2;
     }
 
     /* ===== СЕКЦИЯ ПРИГЛАШЕНИЯ ===== */
@@ -827,8 +838,8 @@
     /* ===== АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
     @media (max-width: 768px) {
       .couple-name { font-size: 3.5em; }
-      .couple-container { flex-direction: column; gap: 20px; }
-      .couple-photo { width: 150px; height: 150px; }
+      .invite-phrase { font-size: 1.4em; }
+      .date { font-size: 1.8em; letter-spacing: 4px; padding: 12px 25px; }
       .countdown-number { font-size: 2.5em; }
       .section-title { font-size: 2.5em; }
       .countdown-item { padding: 20px; min-width: 110px; }
@@ -897,18 +908,20 @@
 </head>
 
 <body>
-  <!-- ГЛАВНЫЙ ЭКРАН С ФОТО МОЛОДОЖЕНОВ -->
+  <!-- ГЛАВНЫЙ ЭКРАН С АТМОСФЕРНОЙ ФОТОГРАФИЕЙ -->
   <section class="hero">
-    <div class="couple-container">
-      <img src="https://i.pinimg.com/736x/8c/2b/9e/8c2b9e3b3b3b3b3b3b3b3b3b3b3b3b3b.jpg" alt="Виктор" class="couple-photo">
-      <img src="https://i.pinimg.com/736x/9d/2c/9f/9d2c9f3b3b3b3b3b3b3b3b3b3b3b3b3b.jpg" alt="Софья" class="couple-photo">
+    <div class="hero-content">
+      <h1 class="couple-name">Виктор & Софья</h1>
+      <p class="invite-phrase">Приглашаем вас разделить с нами радость нашего особенного дня</p>
+      <div class="date">06.12.2025</div>
     </div>
-    <h1 class="couple-name">Виктор & Софья</h1>
-    <div class="date">06.12.2025</div>
+    <div class="scroll-down" onclick="document.getElementById('invitation').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-chevron-down"></i>
+    </div>
   </section>
 
   <!-- СЕКЦИЯ ПРИГЛАШЕНИЯ -->
-  <section class="invitation">
+  <section class="invitation" id="invitation">
     <h2 class="section-title">Приглашение</h2>
     <div class="invitation-text">
       <p>Дорогие друзья и родные!</p>
@@ -965,6 +978,7 @@
     </div>
   </section>
 
+  <!-- ОСТАЛЬНЫЕ СЕКЦИИ ОСТАЮТСЯ БЕЗ ИЗМЕНЕНИЙ -->
   <!-- СЕКЦИЯ ОБРАТНОГО ОТСЧЕТА -->
   <section class="countdown">
     <h2 class="section-title countdown-title">До свадьбы осталось</h2>
@@ -998,9 +1012,9 @@
       <p>г. Москва, ул. Дольская, д. 1</p>
       <p><strong>Начало церемонии в 13:00. Просьба не опаздывать!</strong></p>
       <div class="location-map">
-        <!-- Карта Царицыно -->
+        <!-- Карта Царицыно с меткой -->
         <iframe 
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A1b8a6a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a&amp;source=constructor" 
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c&amp;source=constructor&amp;ll=37.6819%2C55.6157&amp;z=16&amp;pt=37.6819%2C55.6157%2Cpm2rdm" 
           width="100%" 
           height="100%" 
           frameborder="0"
@@ -1018,9 +1032,9 @@
       <p>г. Москва, ул. Серпуховский Вал, д. 21</p>
       <p><strong>Начало банкета в 15:30</strong></p>
       <div class="location-map">
-        <!-- Карта Даниловского -->
+        <!-- Карта Даниловского с меткой -->
         <iframe 
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A2c9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d9d&amp;source=constructor" 
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c9c&amp;source=constructor&amp;ll=37.6176%2C55.7104&amp;z=16&amp;pt=37.6176%2C55.7104%2Cpm2rdm" 
           width="100%" 
           height="100%" 
           frameborder="0"
