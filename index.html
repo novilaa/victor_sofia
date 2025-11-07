@@ -503,7 +503,7 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
-    /* ===== НОВЫЙ СТИЛЬ ДЛЯ ФОТОГРАФИЙ МЕСТ ===== */
+    /* ===== ОБНОВЛЕННЫЙ СТИЛЬ ДЛЯ ВЕРТИКАЛЬНЫХ ФОТОГРАФИЙ ЦАРИЦЫНО ===== */
     .location-photos {
       display: flex;
       gap: 15px;
@@ -526,7 +526,16 @@
       box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
 
-    .location-photo img {
+    /* Фотографии Царицыно - вертикальные */
+    .tsaritsyno-photo img {
+      width: 100%;
+      height: 350px; /* Увеличили высоту для вертикального формата */
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Фотографии ресторана - горизонтальные (как были) */
+    .restaurant-photo img {
       width: 100%;
       height: 200px;
       object-fit: cover;
@@ -985,6 +994,11 @@
         width: 100%;
         max-width: 350px;
       }
+      
+      /* Адаптивность для вертикальных фотографий Царицыно */
+      .tsaritsyno-photo img {
+        height: 300px; /* Немного уменьшаем высоту на мобильных */
+      }
     }
 
     /* Анимация появления элементов при скролле */
@@ -1106,13 +1120,13 @@
       <p>г. Москва, ул. Дольская, д. 1</p>
       <p><strong>Начало церемонии в 13:00. Просьба не опаздывать!</strong></p>
       
-      <!-- Добавлены 2 фотографии Царицыно -->
+      <!-- Обновленные вертикальные фотографии Царицыно -->
       <div class="location-photos">
-        <div class="location-photo">
+        <div class="location-photo tsaritsyno-photo">
           <img src="image2.jpg" alt="Царицыно - главный дворец">
           <div class="location-photo-caption"></div>
         </div>
-        <div class="location-photo">
+        <div class="location-photo tsaritsyno-photo">
           <img src="image3.jpg" alt="Царицыно - парк">
           <div class="location-photo-caption"></div>
         </div>
@@ -1138,9 +1152,9 @@
       <p class="location-address">Ресторан "Даниловский"</p>
       <p>г. Москва, Большой Староданиловский переулок, д. 5</p>
       
-      <!-- Добавлена 1 фотография ресторана -->
+      <!-- Фотография ресторана остается горизонтальной -->
       <div class="location-photos">
-        <div class="location-photo">
+        <div class="location-photo restaurant-photo">
           <img src="image1.jpg" alt="Ресторан Даниловский">
           <div class="location-photo-caption"></div>
         </div>
@@ -1194,25 +1208,14 @@
           <p>Дресс-кода нет! Мы хотим, чтобы вы чувствовали себя комфортно. Приходите в том, в чем вам будет уютно и радостно.</p>
         </div>
       </div>
-      <div class="details-container">
-        <div class="detail-item">
-          <div class="detail-icon">
-            <i class="fas fa-gift"></i>
-          </div>
-          <div class="detail-content">
-            <h3>Пожелания по подаркам</h3>
-            <p>Ваше присутствие - самый главный подарок для нас! Если вы хотите нас порадовать, мы будем благодарны за конверт с вашими пожеланиями.</p>
-          </div>
+      
+      <div class="detail-item">
+        <div class="detail-icon">
+          <i class="fas fa-heart"></i>
         </div>
-        
-        <div class="detail-item">
-          <div class="detail-icon">
-            <i class="fas fa-heart"></i>
-          </div>
-          <div class="detail-content">
-            <h3>Цветы</h3>
-            <p>Дорогие гости, чтобы цветы не увядали напрасно, мы будем рады, если вы подарите им вечную жизнь в нашем конверте. Любая сумма, которую вы готовы были потратить на букет, станет для нас гораздо более ценным и долговечным подарком.</p>
-          </div>
+        <div class="detail-content">
+          <h3>Цветы</h3>
+          <p>Дорогие гости, чтобы цветы не увядали напрасно, мы будем рады, если вы подарите им вечную жизнь в нашем конверте. Любая сумма, которую вы готовы были потратить на букет, станет для нас гораздо более ценным и долговечным подарком.</p>
         </div>
       </div>
     </div>
