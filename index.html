@@ -124,8 +124,9 @@
       color: var(--light);
       /* Красивая атмосферная фотография */
       background-color: var(--dark-navy); /* Цвет фона на случай, если изображение не загрузится */
-      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), 
-                  url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), 
+              url('image.jpg');
+
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -1071,9 +1072,10 @@
     </div>
     
     <div class="location-card">
-      <h3 class="location-name">Банкет</h3>
+      <h3 class="location-name">Фуршет и Банкет</h3>
       <p class="location-address">Ресторан "Даниловский"</p>
       <p>г. Москва, Большой Староданиловский переулок, д. 5</p>
+      <p><strong>Начало фуршета в 15:00</strong></p>
       <p><strong>Начало банкета в 15:30</strong></p>
       <div class="location-map">
         <!-- Карта Даниловского с меткой -->
@@ -1100,24 +1102,12 @@
         <div class="timeline-event">Церемония бракосочетания в Царицыно (Голубая гостиная)</div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-time">14:00</div>
-        <div class="timeline-event">Фотосессия в парке Царицыно</div>
+        <div class="timeline-time">15:00</div>
+        <div class="timeline-event">Фуршет в ресторане "Даниловский"</div>
       </div>
       <div class="timeline-item">
         <div class="timeline-time">15:30</div>
         <div class="timeline-event">Начало банкета в ресторане "Даниловский"</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-time">16:30</div>
-        <div class="timeline-event">Поздравления и тосты</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-time">18:00</div>
-        <div class="timeline-event">Торт и первый танец</div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-time">20:00</div>
-        <div class="timeline-event">Дискотека</div>
       </div>
     </div>
   </section>
@@ -1135,22 +1125,25 @@
           <p>Дресс-кода нет! Мы хотим, чтобы вы чувствовали себя комфортно. Приходите в том, в чем вам будет уютно и радостно.</p>
         </div>
       </div>
-      <div class="detail-item">
-        <div class="detail-icon">
-          <i class="fas fa-gift"></i>
+      <div class="details-container">
+        <div class="detail-item">
+          <div class="detail-icon">
+            <i class="fas fa-gift"></i>
+          </div>
+          <div class="detail-content">
+            <h3>Пожелания по подаркам</h3>
+            <p>Ваше присутствие - самый главный подарок для нас! Если вы хотите нас порадовать, мы будем благодарны за конверт с вашими пожеланиями.</p>
+          </div>
         </div>
-        <div class="detail-content">
-          <h3>Пожелания по подаркам</h3>
-          <p>Ваше присутствие - самый главный подарок для нас! Если вы хотите нас порадовать, мы будем благодарны за конверт с вашими пожеланиями.</p>
-        </div>
-      </div>
-      <div class="detail-item">
-        <div class="detail-icon">
-          <i class="fas fa-child"></i>
-        </div>
-        <div class="detail-content">
-          <h3>Дети</h3>
-          <p>Мы очень любим ваших детей, но в этот день мы хотели бы провести праздник в компании взрослых.</p>
+        
+        <div class="detail-item">
+          <div class="detail-icon">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="detail-content">
+            <h3>Цветы</h3>
+            <p>Дорогие гости, чтобы цветы не увядали напрасно, мы будем рады, если вы подарите им вечную жизнь в нашем конверте. Любая сумма, которую вы готовы были потратить на букет, станет для нас гораздо более ценным и долговечным подарком.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1179,16 +1172,11 @@
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="foodPreferences">Предпочтения в еде</label>
-        <textarea id="foodPreferences" name="foodPreferences" rows="2" class="form-input" placeholder="Укажите, если у вас есть особые предпочтения в еде (вегетарианское, без глютена и т.д.)"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label class="form-label">Предпочитаемые напитки</label>
-        <div class="checkbox-group">
-          <label><input type="checkbox" name="drinks" value="Водка"> Водка</label>
-          <label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label>
-          <label><input type="checkbox" name="drinks" value="Безалкогольные напитки"> Безалкогольные напитки</label>
+        <label class="form-label">Куда планируете прийти?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="location" value="Церемония и банкет"> Приду и на церемонию, и на банкет</label>
+          <label><input type="radio" name="location" value="Только церемония"> Приду только на церемонию бракосочетания в Царицыно</label>
+          <label><input type="radio" name="location" value="Только банкет"> Приду только на фуршет и банкет</label>
         </div>
       </div>
 
@@ -1211,7 +1199,7 @@
   <footer>
     <p>С любовью, Виктор и Софья 💍</p>
     <p>Связаться с нами: 
-      <a href="https://t.me/username" target="_blank">@username</a>
+      <a href="https://t.me/soshenka" target="_blank">@soshenka</a>
     </p>
     <p style="opacity: 0.7;">© 2025 Viktor & Sofya Wedding</p>
   </footer>
@@ -1273,8 +1261,7 @@
       const name = form.name.value.trim();
       const attendance = form.attendance.value;
       const guests = form.guests.value || "1";
-      const foodPreferences = form.foodPreferences.value.trim() || "—";
-      const drinks = Array.from(form.querySelectorAll('input[name="drinks"]:checked')).map(cb => cb.value).join(", ") || "Не указано";
+      const location = document.querySelector('input[name="location"]:checked')?.value || "Не указано";
       const message = form.message.value.trim() || "—";
 
       const text = `
@@ -1282,8 +1269,7 @@
 👤 Имя: ${name}
 📅 Присутствие: ${attendance}
 👥 Количество гостей: ${guests}
-🍽 Предпочтения в еде: ${foodPreferences}
-🥂 Напитки: ${drinks}
+📍 Куда придет: ${location}
 💬 Сообщение: ${message}
       `;
 
