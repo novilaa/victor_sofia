@@ -503,6 +503,44 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
+    /* ===== НОВЫЙ СТИЛЬ ДЛЯ ФОТОГРАФИЙ МЕСТ ===== */
+    .location-photos {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .location-photo {
+      width: calc(50% - 10px);
+      max-width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .location-photo:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .location-photo img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .location-photo-caption {
+      padding: 12px;
+      background: var(--light-ice);
+      font-size: 0.9em;
+      color: #555;
+      text-align: center;
+    }
+
     /* ===== СЕКЦИЯ РАСПИСАНИЯ ===== */
     .timeline-section {
       background: linear-gradient(to bottom, var(--light-ice), var(--ice));
@@ -936,6 +974,17 @@
         letter-spacing: 0.5px;
         margin-top: 5px;
       }
+
+      /* Адаптивность для фотографий мест */
+      .location-photos {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .location-photo {
+        width: 100%;
+        max-width: 350px;
+      }
     }
 
     /* Анимация появления элементов при скролле */
@@ -1056,6 +1105,19 @@
       <p class="location-address">Музей-заповедник Царицыно, Голубая гостиная</p>
       <p>г. Москва, ул. Дольская, д. 1</p>
       <p><strong>Начало церемонии в 13:00. Просьба не опаздывать!</strong></p>
+      
+      <!-- Добавлены 2 фотографии Царицыно -->
+      <div class="location-photos">
+        <div class="location-photo">
+          <img src="image2.jpg" alt="Царицыно - главный дворец">
+          <div class="location-photo-caption"></div>
+        </div>
+        <div class="location-photo">
+          <img src="image3.jpg" alt="Царицыно - парк">
+          <div class="location-photo-caption"></div>
+        </div>
+      </div>
+      
       <div class="location-map">
         <!-- Карта Царицыно с меткой -->
         <iframe 
@@ -1075,8 +1137,15 @@
       <h3 class="location-name">Фуршет и Банкет</h3>
       <p class="location-address">Ресторан "Даниловский"</p>
       <p>г. Москва, Большой Староданиловский переулок, д. 5</p>
-      <p><strong>Начало фуршета в 15:00</strong></p>
-      <p><strong>Начало банкета в 15:30</strong></p>
+      
+      <!-- Добавлена 1 фотография ресторана -->
+      <div class="location-photos">
+        <div class="location-photo">
+          <img src="image1.jpg" alt="Ресторан Даниловский">
+          <div class="location-photo-caption"></div>
+        </div>
+      </div>
+      
       <div class="location-map">
         <!-- Карта Даниловского с меткой -->
         <iframe 
